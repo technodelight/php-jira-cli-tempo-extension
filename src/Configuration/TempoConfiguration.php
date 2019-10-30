@@ -3,9 +3,8 @@
 namespace Technodelight\JiraTempoExtension\Configuration;
 
 use InvalidArgumentException;
-use Technodelight\Jira\Configuration\ApplicationConfiguration\Service\RegistrableConfiguration;
 
-class TempoConfiguration implements RegistrableConfiguration
+class TempoConfiguration
 {
     /**
      * @var array
@@ -43,19 +42,6 @@ class TempoConfiguration implements RegistrableConfiguration
         throw new InvalidArgumentException(
             sprintf('Cannot find instance %s', $instanceName)
         );
-    }
-
-    public function servicePrefix()
-    {
-        return 'tempo';
-    }
-
-    /**
-     * @return array
-     */
-    public function configAsArray()
-    {
-        return $this->config;
     }
 
     private function __construct()

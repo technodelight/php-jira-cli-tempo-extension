@@ -6,7 +6,9 @@
         "php": ">=7.0",
         "technodelight/php-jira-domain-models": "^1.0",
         "symfony/config": "3.2",
-        "symfony/dependency-injection": "2.8"
+        "symfony/dependency-injection": "2.8",
+        "icanboogie/storage": "2.1",
+        "technodelight/php-jira-tempo-plugin": "^1.0"
     },
     "autoload": {
         "psr-4": {
