@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "b45dee4cb3b7b3f9cd4faf1d9a94fc13",
+    "packages": [
+        {
+            "name": "technodelight/php-jira-domain-models",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/technodelight/php-jira-domain-models.git",
+                "reference": "aedaadd0912b4986669cc7931c62fd9ab5991ac9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/technodelight/php-jira-domain-models/zipball/aedaadd0912b4986669cc7931c62fd9ab5991ac9",
+                "reference": "aedaadd0912b4986669cc7931c62fd9ab5991ac9",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Technodelight\\Jira\\Domain\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Zenc",
+                    "email": "zenc@zenc.hu"
+                }
+            ],
+            "description": "Domain models for Jira entities",
+            "time": "2019-10-30T13:53:54+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
