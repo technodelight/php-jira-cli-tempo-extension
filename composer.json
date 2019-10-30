@@ -3,7 +3,10 @@
     "description": "Tempo Timesheets extension for JIRA CLI tool",
     "type": "jira-cli-extension",
     "require": {
-        "technodelight/php-jira-domain-models": "^1.0"
+        "php": ">=7.0",
+        "technodelight/php-jira-domain-models": "^1.0",
+        "symfony/config": "3.2",
+        "symfony/dependency-injection": "2.8"
     },
     "autoload": {
         "psr-4": {
