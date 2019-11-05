@@ -13,6 +13,7 @@ use Technodelight\Jira\Domain\WorklogCollection;
 class WorklogHandler implements WorklogHandlerInterface
 {
     const DATETIME_FORMAT = 'Y-m-d';
+    const JIRA_FORMAT = 'Y-m-d\TH:i:s.000O';
     /**
      * @var Api
      */
@@ -174,6 +175,6 @@ class WorklogHandler implements WorklogHandlerInterface
      */
     private function convertDateFormat($date, $time)
     {
-        return (new DateTime($date . ' ' . $time))->format('Y-m-d\TH:i:s.000O');
+        return (new DateTime($date . ' ' . $time))->format(self::JIRA_FORMAT);
     }
 }
