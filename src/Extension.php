@@ -1,7 +1,15 @@
 <?php
 
 namespace {
-    require_once getenv('HOME') . '/.composer/vendor/autoload.php';
+    spl_autoload_register(function ($className) {
+        if (strpos($className, 'Technodelight\\JiraTempoExtension') === false) {
+            return;
+        }
+        $path = str_replace('\\', DIRECTORY_SEPARATOR, str_replace('Technodelight\\JiraTempoExtension\\', '', $className));
+        if (is_file('./' . $path . '.php')) {
+            require_once './' . $path . '.php';
+        }
+    });
 }
 
 namespace Technodelight\JiraTempoExtension
