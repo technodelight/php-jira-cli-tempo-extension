@@ -1,13 +1,39 @@
 <?php
 
-namespace {
+namespace
+{
     spl_autoload_register(function ($className) {
-        if (strpos($className, 'Technodelight\\JiraTempoExtension') === false) {
+        $classPaths = [
+            __DIR__ . '/%s.php' => ['Technodelight\\JiraTempoExtension'],
+            getenv('HOME') . '/.composer/vendor/*/*/src/%s.php' => [
+                'Technodelight\\Tempo2',
+                'ICanBoogie\\Storage',
+            ],
+        ];
+
+        $found = false;
+        foreach ($classPaths as $path => $namespaces) {
+            foreach ($namespaces as $namespace) {
+                if (strpos($className, $namespace) !== false) {
+                    $filepath = str_replace(
+                        '\\',
+                        DIRECTORY_SEPARATOR,
+                        str_replace($namespace, '', $className)
+                    );
+                    $found = [sprintf($path, $filepath), $namespace];
+                }
+            }
+        }
+        if (false === $found) {
             return;
         }
-        $path = str_replace('\\', DIRECTORY_SEPARATOR, str_replace('Technodelight\\JiraTempoExtension\\', '', $className));
-        if (is_file('./' . $path . '.php')) {
-            require_once './' . $path . '.php';
+
+        list ($globPath, $namespace) = $found;
+        foreach (glob($globPath) as $file) {
+            if (is_file($file) && strpos(file_get_contents($file), 'namespace ' . $namespace) !== false) {
+                require_once $file;
+                break;
+            }
         }
     });
 }
