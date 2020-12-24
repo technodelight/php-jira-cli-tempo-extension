@@ -5,7 +5,7 @@
     "require": {
         "php": ">=7.0",
         "icanboogie/storage": "^2.1",
-        "technodelight/php-jira-tempo-plugin": "^1.0"
+        "technodelight/php-jira-tempo-plugin-api": "^1.0"
     },
     "require-dev": {
         "technodelight/php-jira-domain-models": "^1.3",
